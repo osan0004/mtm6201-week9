@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SVG Week9</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
   <div class="container">
     <h1>
@@ -16,13 +18,38 @@
 
     <!-- embedding svg code into HTML -->
     <svg width="200" height="200" viewBox="0 0 200 200">
-      <rect x="0" y="0" width="200" height="200" rx="8" ry="8" fill="white"/>
-      <circle cx="150" cy="150" r="25" fill="black"/>
-      <circle cx="50" cy="50" r="25" fill="black"/>
+      <rect x="0" y="0" width="200" height="200" rx="8" ry="8" fill="white" />
+      <circle cx="150" cy="150" r="25" fill="black" />
+      <circle cx="50" cy="50" r="25" fill="black" />
     </svg>
-    
+
+    <!-- resuing graphics with tag -->
+    <svg width="200" height="200" viewBox="0 0 200 200" class="dic4">
+      <rect x="0" y="0" width="200" height="200" rx="8" ry="8" fill="grey" />
+      <circle cx="150" cy="150" r="25" fill="black" id="dot" />
+      <use xlink:href="#dot" x="-100"></use>
+      <use xlink:href="#dot" y="-100"></use>
+      <use xlink:href="#dot" y="-100" x="-100"></use>
+    </svg>
+
+    <!-- using defs and g tags -->
+    <svg width="200" height="200" viewBox="0 0 200 200" class="dic5">
+      <defs>
+        <rect id="box" width="200" height="200" rx="8" ry="8" fill="grey" />
+        <circle id="point" r="25" fill="black" />
+      </defs>
+      <use xlink:href="#box"></use>
+      <g>
+        <use xlink:href="#point" x="50" y="50"></use>
+        <use xlink:href="#point" x="150" y="50"></use>
+        <use xlink:href="#point" x="50" y="150"></use>
+        <use xlink:href="#point" x="150" y="150"></use>
+        <use xlink:href="#point" x="100" y="100"></use>
+      </g>
+    </svg>
   </div>
 
 
 </body>
+
 </html>
