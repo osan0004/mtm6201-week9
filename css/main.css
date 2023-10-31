@@ -33,3 +33,17 @@ body{
 .cls-3{
   fill:#fcf0c0;
 }
+
+.pupil{
+  transition: all 1s;
+}
+
+ @keyframes move{
+  0%{
+    transform: translate(0px);
+ }
+
+ 100%{
+  transform: translate(10px);
+ }
+}
